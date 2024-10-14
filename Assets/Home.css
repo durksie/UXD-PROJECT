@@ -12,19 +12,22 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #fff;
+    background-color:  #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-    display: flex;
-    align-items: center;
+
+
+.logo img {
+    width: 140px;
+    height: 100px;
+  
 }
 
-.logo-img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+/*Image Hover*/
+.logo img:hover {
+    transform: scale(1.1); /* Scale the image to 110% */
+    opacity: 0.8;          /* Reduce opacity to 80% */
 }
 
 nav ul {
@@ -35,34 +38,83 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color:whitesmoke;
     font-weight: bold;
 }
 
-.auth-buttons button {
-    background-color: #2e8bc0;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-left: 10px;
+/*Hover effects*/
+/*Navigation*/
+nav ul li a:hover {
+    color: #fff; /* Change the text color on hover */
+    background-color: black; /* Change the background color on hover */
+    padding: 5px 10px;
     border-radius: 5px;
 }
 
-.auth-buttons .signin-btn {
-    background-color: #f67280;
+/*Buttons style*/
+
+.buttons button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+.register-btn ,.signin-btn{
+    background-color:rgb(250, 215, 218);
+    border: 2px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px; 
+}
+
+
+/*Content Style*/
+
+.content{
+    display: inline-flex;
 }
 
 .intro {
-    display:inline-block;
-   
+    border-radius: 10px;        /* Rounded corners */
+    padding: 20px;              /* Space inside the card */
+    max-width: 400px;           /* Limit the card width */
+    margin: 20px;          /* Center the card horizontally */
+    text-align: center;         /* Center-align the content */
+    font-family:cursive
+}
+
+.intro h2{
+    color: purple;
 }
 
 
 
+.content #signup {
+    background-color:rgb(250, 215, 218);
+    color: white;              /* White text */
+    padding: 12px 24px;        /* Padding for a comfortable button size */
+    font-size: 16px;           /* Font size */
+    border: none;              /* Remove borders */
+    border-radius: 5px;        /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#signup:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: scale(1.05);    /* Slightly enlarge the button */
+}
 
 
+/*Footer*/
+.footer-logo img{
+    width:200px;
+}
 
+.footer-content{
+    display: inline-flex;
+}
 
 footer {
     background-color: #333;
@@ -78,8 +130,42 @@ footer {
 
 .footer-links{
     display: inline-flex;
+
+ 
 }
 
-.footer-links li a{
-    text-decoration: none;
+.ft ul {
+    list-style-type: none;
+    padding-left: -4pxpx;
+}
+.ft a {
+    text-decoration: none;    /* Remove underline from links */
+    color: whitesmoke;          /* Link color */
+    transition: color 0.3s;  /* Smooth transition for hover effect */
+    font-family: cursive;
+  
+}
+
+.ft h4{
+    color: pink;
+    padding-left: 40px;
+}
+.ft a:hover {
+    color: #ffffff;           /* Change text color to white on hover */
+    background-color: #007bff; /* Change background color on hover */
+}
+ /*social icons style*/
+.social-icons{
+    padding-left: 100px;
+    margin-top: 130px;
+}
+
+.social-icons img{
+    width:50px;
+    margin: 30px;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);       
+    filter: brightness(0.8);     
 }
