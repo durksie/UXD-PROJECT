@@ -11,7 +11,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    margin: 0;
+    padding: 0;
     background-color:  #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -73,13 +74,15 @@ nav ul li a:hover {
 
 .content{
     display: inline-flex;
+    margin: 0;
+    padding: 0;
 }
 
 .intro {
     border-radius: 10px;        /* Rounded corners */
-    padding: 20px;              /* Space inside the card */
+           /* Space inside the card */
     max-width: 400px;           /* Limit the card width */
-    margin: 20px;          /* Center the card horizontally */
+           /* Center the card horizontally */
     text-align: center;         /* Center-align the content */
     font-family:cursive
 }
@@ -102,7 +105,7 @@ nav ul li a:hover {
 }
 
 #signup:hover {
-    background-color: #45a049; /* Slightly darker green on hover */
+    background-color: black; /* Slightly darker green on hover */
     transform: scale(1.05);    /* Slightly enlarge the button */
 }
 
