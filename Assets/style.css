@@ -178,3 +178,36 @@ footer {
 .hero img{
 transform: translateY(65px);
 }
+
+
+/*ABOUT PAGE STYLES*/
+.cont {
+    max-width: 800px; /* Limit the width of the content */
+    margin: auto; /* Center the content */
+    padding: 20px; /* Add padding inside the container */
+    
+  
+  font-family: cursive;
+
+}
+
+.cont h2{
+color: palevioletred;
+}
+
+.cont1 {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically align items */
+    gap: 20px; /* Adds space between the image and text */
+    text-align: justify; /* Justifies the paragraph text */
+}
+
+.cont p{
+    text-align: justify; /* Justifies the paragraph text */   
+}
+.cont1 img{
+    width:300px;
+    height:300px;
+    transform: translateY(-20px);
+    
+}
