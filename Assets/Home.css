@@ -76,6 +76,7 @@ nav ul li a:hover {
     display: inline-flex;
     margin: 0;
     padding: 0;
+   
 }
 
 .intro {
@@ -84,7 +85,8 @@ nav ul li a:hover {
     max-width: 400px;           /* Limit the card width */
            /* Center the card horizontally */
     text-align: center;         /* Center-align the content */
-    font-family:cursive
+    font-family:cursive;
+    transform: translateY(70px);
 }
 
 .intro h2{
@@ -171,4 +173,8 @@ footer {
 .social-icons a:hover img {
     transform: scale(1.1);       
     filter: brightness(0.8);     
+}
+
+.hero img{
+transform: translateY(65px);
 }
