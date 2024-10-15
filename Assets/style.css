@@ -211,3 +211,56 @@ color: palevioletred;
     transform: translateY(-20px);
     
 }
+
+
+
+/* Animation*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Optional slight slide up */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for image slide-in from the left */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.abtCo {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cont {
+    margin-bottom: 40px;
+    animation: fadeIn 1.5s ease-out forwards; /* Applying fade-in animation */
+}
+
+.cont1 img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: slideIn 1.5s ease-out forwards; /* Applying slide-in animation */
+}
+
+h2, p, ul {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1.5s ease-out forwards; /* Applying fade-in animation */
+    animation-delay: 0.5s; /* Delay to stagger the text */
+}
+
+
