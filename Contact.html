@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Assets/style.css">
+    <title>Contact Us - ClubBraids by Theodore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .container p{
+            padding-left: 100px;
+            font-family: cursive;
+        }
+        h1, h2 {
+            text-align: center;
+            color: palevioletred;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-info p {
+           font-family: cursive;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        textarea {
+            height: 150px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #f57b42;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #d4633a;
+        }
+        #map {
+            text-align: center;
+            margin-top: 30px;
+        }
+        #map iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .social-icons img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        .buttons{
+            display: inline-flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+           <a href="Home.html"><img src="/Assets/pictures/Footer.png" alt="ClubBraids Logo"  href=""/></a> 
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="About.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <button class="register-btn">Register</button>
+            <button class="signin-btn">Sign In</button>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>We would love to hear from you! Please use the form below to reach out to us, or contact us directly through the following channels:</p>
+
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p><strong>Business Location:</strong> Sharpville, Vaal, South Africa</p>
+            <p><strong>Phone:</strong> <a href="tel:+27730298765">+27 73 029 8765</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@clubbraids.co.za">info@clubbraids.co.za</a></p>
+
+            <div class="social-icons">
+                <a href="https://wa.me/27730298765" target="_blank">
+                    <img src="/Assets/pictures/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.facebook.com/your-facebook-profile" target="_blank">
+                    <img src="/Assets/pictures/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/your-instagram-profile" target="_blank">
+                    <img src="/Assets/pictures/instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you! Please fill out the form below and send us a message via WhatsApp.</p>
+    
+            <form id="contactForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message" required></textarea>
+    
+                <button type="button" onclick="sendWhatsAppMessage()">Send Message</button>
+            </form>
+        </div>
+     <!--Java script for the message to be sent to whatsapp-->
+        <script>
+            function sendWhatsAppMessage() {
+                // Get form values
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+    
+                // Create the WhatsApp message URL
+                var whatsappURL = 'https://wa.me/27730298765?text=' 
+                    + encodeURIComponent('Hello, my name is ' + name + '.\n')
+                    + encodeURIComponent('My email is ' + email + '.\n')
+                    + encodeURIComponent('Here is my message:\n' + message);
+    
+                // Open WhatsApp with the prefilled message
+                window.open(whatsappURL, '_blank');
+            }
+        </script>
+
+        <div id="map">
+            <h2>Our Location</h2>
+            <!-- Embed Google Map -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.8407648306896!2d27.856540315597564!3d-26.67603668337337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e94a70d751f6957%3A0x71e12e679aa63443!2sSharpville%2C%20Vereeniging%2C%201930%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1697475769994!5m2!1sen!2sza"
+                frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
+    </div>
+
+     <!-- Footer section -->
+     <footer>
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <img src="/Assets/pictures/Footer.png" alt="ClubBraids Logo">
+                
+            </div>
+
+
+            <div class="footer-links">
+                <div class="ft">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="Contact.html">Contact Information</a></li>
+                        <li><a href="Contact.html#map">Location</a></li>
+                    </ul>
+                </div>
+                <div class="ft">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="About.html">Hairstyles</a></li>
+                        <li><a href="About.html">Appointments</a></li>
+                    </ul>
+                </div>
+                <div class="ft">
+                    <h4>My Account</h4>
+                    <ul>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Order History</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/Theodorah Molebogeng" target="_blank">
+                <img src="/Assets/pictures/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://wa.me/27730298765" target="_blank">
+                <img src="/Assets/pictures/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/Club_Braids_By_Theodore" target="_blank">
+                <img src="/Assets/pictures/instagram.png" alt="Instagram">
+            </a>
+        </div>
+        <p>&copy; Copyright - ClubBraids</p>
+    </footer>
+
+</body>
+</html>
