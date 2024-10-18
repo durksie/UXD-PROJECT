@@ -304,3 +304,33 @@ h2, p, ul {
         height: auto; /* Maintain aspect ratio */
     }
 }
+
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center; /* Center align items */
+        margin: 10px; /* Reduce margin */
+    }
+
+    .intro {
+        max-width: 90%; /* Make intro section wider */
+        text-align: center; /* Center the text */
+    }
+
+    .hero, .hero2 {
+        margin-bottom: 20px; /* Add space between images */
+        width: 100%; /* Make sure images use full width */
+    }
+
+    .hero img, .hero2 img {
+        max-width: 100%; /* Ensure images remain responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    #signup {
+        width: 100%; /* Make the signup button full width */
+        padding: 10px; /* Adjust padding for better touch targets */
+    }
+}
