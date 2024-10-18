@@ -1,6 +1,9 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
- import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+
+ import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
+
+
  // TODO: Add SDKs for Firebase products that you want to use
  // https://firebase.google.com/docs/web/setup#available-libraries
  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
@@ -18,20 +21,43 @@
 
  // Initialize Firebase
  const app = initializeApp(firebaseConfig);
- const analytics = getAnalytics(app);
  const auth=getAuth(app);
 
+
+//database
+//get ref to database services
+
+const db=getDatabase(app);
 
  // Grabbing all the input values using const
 
 
 
- submit.addEventListener("click", function(e) {
+ document.getElementById("submit").addEventListener("click", function(e) {
     e.preventDefault(); // Prevent default form submission behavior
- 
-    const email = document.getElementById('email').value;
+    //Database
+    
+     // Grab form values
+  const fullname = document.getElementById("fullname").value;
+  const email = document.getElementById("email").value;
+  const cellphone = document.getElementById("cellphone").value;
+  const address = document.getElementById("address").value;
+  const password = document.getElementById("password").value;
 
-    const password = document.getElementById('password').value;
+  // Save user data to Realtime Database
+  set(ref(db, 'users/' + fullname), {
+    fullname: fullname,
+    email: email,
+    cellphone: cellphone,
+    address: address
+  }).then(() => {
+    // Data saved successfully
+    console.log("User data saved to database.");
+  }).catch((error) => {
+    console.error("Error saving data: ", error);
+  });
+    //authentication
+ 
     const submit =document.getElementById('submit');
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -48,4 +74,6 @@
     alert(errorMessage);
     // ..
   });
+
+
  });
