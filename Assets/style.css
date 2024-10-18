@@ -11,7 +11,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0;
+    padding: 0;
     background-color: #333;
     width: 100%;
     top: 0;
@@ -105,7 +106,7 @@ footer {
     padding: 2rem;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+ 
     flex-wrap: wrap;
     margin-top: 50px;
 }
@@ -115,6 +116,9 @@ footer {
 }
 
 .footer-content {
+    display: inline-flex;
+}
+.footer-links{
     display: inline-flex;
 }
 

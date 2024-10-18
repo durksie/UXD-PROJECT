@@ -5,181 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/style.css">
     <title>Contact Us - ClubBraids by Theodore</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-    
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
-        }
-    
-        .container p {
-            padding-left: 100px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-    
-        h1, h2 {
-            text-align: center;
-            color: palevioletred;
-        }
-    
-        .contact-info {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-    
-        .contact-info p {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-    
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-    
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s;
-        }
-    
-        .social-icons img:hover {
-            transform: scale(1.2);
-        }
-    
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-    
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-    
-        input[type="text"], 
-        input[type="email"], 
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-        }
-    
-        textarea {
-            height: 150px;
-        }
-    
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #f57b42;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-    
-        button:hover {
-            background-color: #d4633a;
-        }
-    
-        #map {
-            text-align: center;
-            margin-top: 30px;
-        }
-    
-        #map iframe {
-            width: 100%;
-            height: 350px;
-            border: 0;
-        }
-    
-        /* Media Queries for Responsiveness */
-    
-        /* For tablets and small desktops */
-        @media (max-width: 768px) {
-            .container {
-                width: 95%; /* Expand container width */
-            }
-    
-            .social-icons img {
-                width: 35px;
-                height: 35px; /* Smaller social icons */
-            }
-    
-            .container p {
-                padding-left: 50px; /* Adjust padding for smaller screens */
-            }
-        }
-    
-        /* For mobile devices */
-        @media (max-width: 480px) {
-            h1, h2 {
-                font-size: 1.5em; /* Reduce heading font size for mobile */
-            }
-    
-            .container p {
-                padding-left: 20px; /* Adjust padding for mobile screens */
-            }
-    
-            button {
-                font-size: 1em; /* Reduce button font size */
-                padding: 10px; /* Reduce button padding */
-            }
-    
-            .social-icons img {
-                width: 30px;
-                height: 30px; /* Smaller social icons for mobile */
-            }
-    
-            textarea {
-                height: 100px; /* Reduce textarea height */
-            }
-    
-            #map iframe {
-                height: 250px; /* Reduce map height on mobile */
-            }
-        }
-    
-        .buttons {
-            display: inline-flex;
-        }
-    </style>
+<style>
+    .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.container p {
+    padding-left: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container h1, h2 {
+    text-align: center;
+    color: palevioletred;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+textarea {
+    height: 150px;
+}
+
+#tbnsend {
+    width: 100%;
+    padding: 15px;
+    background-color:palevioletred;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#tbnsend:hover {
+    background-color: black;
+}
+#map {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#map iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and small desktops */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Expand container width */
+    }
+
+    .social-icons img {
+        width: 35px;
+        height: 35px; /* Smaller social icons */
+    }
+
+    .container p {
+        padding-left: 50px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5em; /* Reduce heading font size for mobile */
+    }
+
+    .container p {
+        padding-left: 20px; /* Adjust padding for mobile screens */
+    }
+
+    button {
+        font-size: 1em; /* Reduce button font size */
+        padding: 10px; /* Reduce button padding */
+    }
+
+    .social-icons img {
+        width: 30px;
+        height: 30px; /* Smaller social icons for mobile */
+    }
+
+    textarea {
+        height: 100px; /* Reduce textarea height */
+    }
+
+    #map iframe {
+        height: 250px; /* Reduce map height on mobile */
+    }
+}
+
+</style>
     
 </head>
 <body>
-    <header>
-        <div class="logo">
-           <a href="./index.html"><img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo"  href=""/></a> 
-        </div>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./Services.html">Services</a></li>
-                <li><a href="./About.html">About Us</a></li>
-            </ul>
-        </nav>
-        <div class="buttons">
-            <a href="./Register.html"><button class="register-btn" >Register</button></a>
-            <a href="./Login.html"><button class="signin-btn" >Sign In</button></a>
-        </div>
-    </header>
+   <!-- Header with logo and navigation -->
+   <header>
+
+      
+
+    <div class="logo">
+        <a href="./index.html"><img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo"  href=""/></a> 
+    </div>
+    <nav>
+        <ul>
+            <li><a href="./About.html">About Us</a></li>
+            <li><a href="./Services.html">Services</a></li>
+            <li><a href="./Contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="buttons">
+        <a href="./Register.html"><button class="register-btn" >Register</button></a>
+        <a href="./Login.html"><button class="signin-btn" >Sign In</button></a>
+    </div>
+</header>
 
 
     <div class="container">
@@ -196,7 +172,7 @@
                 <a href="https://wa.me/27730298765" target="_blank">
                     <img src="./Assets/pictures/whatsapp.png" alt="WhatsApp">
                 </a>
-                <a href="https://www.facebook.com/your-facebook-profile" target="_blank">
+                <a href="https://www.facebook.com/your-facebook-profile">
                     <img src="./Assets/pictures/facebook.png" alt="Facebook">
                 </a>
                 <a href="https://www.instagram.com/your-instagram-profile" target="_blank">
@@ -219,7 +195,7 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Your message" required></textarea>
     
-                <button type="button" onclick="sendWhatsAppMessage()">Send Message</button>
+                <button type="button" onclick="sendWhatsAppMessage()" id="tbnsend">Send Message</button>
             </form>
         </div>
      <!--Java script for the message to be sent to whatsapp-->
