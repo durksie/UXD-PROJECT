@@ -11,9 +11,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    padding: 10px 20px;
     background-color: #333;
+    position: fixed; /* Fix header at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -22,10 +26,9 @@ header {
     height: 100px;
 }
 
-/* Image Hover */
 .logo img:hover {
-    transform: scale(1.1); /* Scale the image to 110% */
-    opacity: 0.8;          /* Reduce opacity to 80% */
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 
 nav ul {
@@ -40,16 +43,17 @@ nav a {
     font-weight: bold;
 }
 
-/* Hover effects */
-/* Navigation */
 nav ul li a:hover {
-    color: #fff; /* Change the text color on hover */
-    background-color: black; /* Change the background color on hover */
+    color: #fff;
+    background-color: black;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
-/* Buttons style */
+.buttons button{
+    transform: translateX(-40px);
+}
+
 .buttons button:hover {
     background-color: #000;
     color: #fff;
@@ -57,24 +61,23 @@ nav ul li a:hover {
 
 .register-btn, .signin-btn {
     background-color: rgb(250, 215, 218);
-    border: 2px solid transparent; /* Added border for better hover effect */
+    border: 2px solid transparent;
     padding: 10px 15px;
     cursor: pointer;
     margin-left: 10px;
     border-radius: 5px; 
 }
 
-/* Content Style */
 .content {
     display: inline-flex;
-    margin: 0;
+    margin-top: 150px; /* Adjust to compensate for the fixed header */
     padding: 0;
 }
 
 .intro {
-    border-radius: 10px; /* Rounded corners */
-    max-width: 400px;    /* Limit the card width */
-    text-align: center;   /* Center-align the content */
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     transform: translateY(70px);
 }
@@ -85,29 +88,21 @@ nav ul li a:hover {
 
 .content #signup {
     background-color: rgb(250, 215, 218);
-    color: white;              /* White text */
-    padding: 12px 24px;        /* Padding for a comfortable button size */
-    font-size: 16px;           /* Font size */
-    border: none;              /* Remove borders */
-    border-radius: 5px;        /* Rounded corners */
-    cursor: pointer;           /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #signup:hover {
-    background-color: black; /* Slightly darker color on hover */
-    transform: scale(1.05);    /* Slightly enlarge the button */
+    background-color: black;
+    transform: scale(1.05);
 }
 
 /* Footer */
-.footer-logo img {
-    width: 200px;
-}
-
-.footer-content {
-    display: inline-flex;
-}
-
 footer {
     background-color: #333;
     color: white;
@@ -116,39 +111,42 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-top: 50px; /* Ensure the footer is spaced nicely */
 }
 
-.footer-links {
+.footer-logo img {
+    width: 200px;
+}
+
+.footer-content {
     display: inline-flex;
 }
 
-.ft{
+.ft {
     margin: 30px;
 }
 
 .ft ul {
     list-style-type: none;
-    padding-left: 0; /* Fixed padding */
+    padding-left: 0;
 }
 
 .ft a {
-    text-decoration: none;    /* Remove underline from links */
-    color: whitesmoke;       /* Link color */
-    transition: color 0.3s;  /* Smooth transition for hover effect */
+    text-decoration: none;
+    color: whitesmoke;
+    transition: color 0.3s;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .ft h4 {
     color: pink;
-    
 }
 
 .ft a:hover {
-    color: #ffffff;           /* Change text color to white on hover */
-    background-color: #007bff; /* Change background color on hover */
+    color: #ffffff;
+    background-color: #007bff;
 }
 
-/* Social icons style */
 .social-icons {
     padding-left: 100px;
     margin-top: 130px;
@@ -160,19 +158,28 @@ footer {
 }
 
 .social-icons a:hover img {
-    transform: scale(1.1);       
-    filter: brightness(0.8);     
+    transform: scale(1.1);
+    filter: brightness(0.8);
 }
 
 .hero img {
     transform: translateY(65px);
 }
 
+.hero, .hero2 {
+    width: 100%;
+}
+
+.hero img, .hero2 img {
+    width: 100%;
+    height: auto;
+}
+
 /* ABOUT PAGE STYLES */
 .cont {
-    max-width: 800px; /* Limit the width of the content */
-    margin: auto; /* Center the content */
-    padding: 20px; /* Add padding inside the container */
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -181,14 +188,14 @@ footer {
 }
 
 .cont1 {
-    display: flex; /* Flexbox layout */
-    align-items: center; /* Vertically align items */
-    gap: 20px; /* Adds space between the image and text */
-    text-align: justify; /* Justifies the paragraph text */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: justify;
 }
 
 .cont p {
-    text-align: justify; /* Justifies the paragraph text */   
+    text-align: justify;
 }
 
 .cont1 img {
@@ -201,7 +208,7 @@ footer {
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(20px); /* Optional slight slide up */
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
@@ -209,7 +216,6 @@ footer {
     }
 }
 
-/* Animation for image slide-in from the left */
 @keyframes slideIn {
     0% {
         opacity: 0;
@@ -229,7 +235,7 @@ footer {
 
 .cont {
     margin-bottom: 40px;
-    animation: fadeIn 1.5s ease-out forwards; /* Applying fade-in animation */
+    animation: fadeIn 1.5s ease-out forwards;
 }
 
 .cont1 img {
@@ -237,13 +243,13 @@ footer {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    animation: slideIn 1.5s ease-out forwards; /* Applying slide-in animation */
+    animation: slideIn 1.5s ease-out forwards;
 }
 
 h2, p, ul {
-    opacity: 0; /* Initially hidden */
-    animation: fadeIn 1.5s ease-out forwards; /* Applying fade-in animation */
-    animation-delay: 0.5s; /* Delay to stagger the text */
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 /* Media Queries for Responsiveness */
@@ -251,90 +257,74 @@ h2, p, ul {
 /* For tablets and small desktops */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack header items */
-        align-items: center; /* Center items */
+        flex-direction: column;
+        align-items: center;
+        position: relative; /* Keep fixed, but let it behave nicely on smaller screens */
     }
 
     .logo img {
-        width: 120px; /* Adjust logo size */
+        width: 120px;
     }
 
     nav ul {
-        flex-direction: column; /* Stack navigation items */
-        gap: 10px; /* Reduced gap */
+        flex-direction: column;
+        gap: 10px;
     }
 
     .footer-content {
-        flex-direction: column; /* Stack footer items */
-        align-items: center; /* Center items */
+        flex-direction: column;
+        align-items: center;
     }
 
     .social-icons {
-        padding-left: 0; /* Remove left padding */
-        margin-top: 30px; /* Adjust margin */
+        padding-left: 0;
+        margin-top: 30px;
     }
 
     .cont1 {
-        flex-direction: column; /* Stack about content items */
+        flex-direction: column;
     }
 
     .cont1 img {
-        width: 100%; /* Adjust image size */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+        height: auto;
+    }
+
+    .intro {
+        transform: translateY(20px);
+        margin: 10px 0;
     }
 }
 
 /* For mobile devices */
 @media (max-width: 480px) {
     .intro {
-        max-width: 90%; /* Expand intro card width */
-        transform: translateY(50px); /* Adjust vertical position */
-    }
-
-    .buttons button {
-        padding: 8px 12px; /* Adjust button padding */
-    }
-
-    .footer-logo img {
-        width: 150px; /* Adjust footer logo size */
-    }
-
-    .social-icons img {
-        width: 40px; /* Adjust social icon size */
-    }
-
-    .cont1 img {
-        width: 80%; /* Adjust image size */
-        height: auto; /* Maintain aspect ratio */
-    }
-}
-
-
-/* Media Queries for Mobile Devices */
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column; /* Stack items vertically on mobile */
-        align-items: center; /* Center align items */
-        margin: 10px; /* Reduce margin */
-    }
-
-    .intro {
-        max-width: 90%; /* Make intro section wider */
-        text-align: center; /* Center the text */
+        max-width: 90%;
+        text-align: center;
     }
 
     .hero, .hero2 {
-        margin-bottom: 20px; /* Add space between images */
-        width: 100%; /* Make sure images use full width */
+        margin-bottom: 20px;
     }
 
     .hero img, .hero2 img {
-        max-width: 100%; /* Ensure images remain responsive */
-        height: auto; /* Maintain aspect ratio */
+        max-width: 100%;
     }
 
     #signup {
-        width: 100%; /* Make the signup button full width */
-        padding: 10px; /* Adjust padding for better touch targets */
+        width: 100%;
+        padding: 10px;
+    }
+
+    .footer-logo img {
+        width: 150px;
+    }
+
+    .social-icons img {
+        width: 40px;
+    }
+
+    .cont1 img {
+        width: 80%;
     }
 }
