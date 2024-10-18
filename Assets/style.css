@@ -19,6 +19,7 @@ header {
     left: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .logo img {
@@ -48,10 +49,6 @@ nav ul li a:hover {
     background-color: black;
     padding: 5px 10px;
     border-radius: 5px;
-}
-
-.buttons button{
-    transform: translateX(-40px);
 }
 
 .buttons button:hover {
@@ -111,7 +108,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-top: 50px; /* Ensure the footer is spaced nicely */
+    margin-top: 50px;
 }
 
 .footer-logo img {
@@ -259,7 +256,7 @@ h2, p, ul {
     header {
         flex-direction: column;
         align-items: center;
-        position: relative; /* Keep fixed, but let it behave nicely on smaller screens */
+        position: fixed; /* Keep header fixed on smaller screens */
     }
 
     .logo img {
@@ -294,10 +291,49 @@ h2, p, ul {
         transform: translateY(20px);
         margin: 10px 0;
     }
+
+    footer {
+        padding: 1rem; /* Reduced footer padding */
+    }
+
+    .social-icons img {
+        width: 40px; /* Reduced size for social icons */
+    }
 }
 
 /* For mobile devices */
 @media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 100px; /* Resize the logo for smaller phones */
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 5px;
+    }
+
+    nav a {
+        font-size: 14px; /* Make nav links slightly smaller */
+        padding: 5px 10px;
+    }
+
+    .register-btn, .signin-btn {
+        padding: 8px 12px; /* Reduce button padding */
+        font-size: 14px;
+    }
+
     .intro {
         max-width: 90%;
         text-align: center;
@@ -321,10 +357,21 @@ h2, p, ul {
     }
 
     .social-icons img {
-        width: 40px;
+        width: 30px; /* Further reduced size for mobile */
+        margin: 15px; /* Reduced margin between icons */
     }
 
     .cont1 img {
         width: 80%;
+    }
+
+    footer {
+        padding: 1rem; /* Smaller footer padding for mobile */
+        flex-direction: column; /* Stack footer content */
+        text-align: center;
+    }
+
+    .ft {
+        margin: 10px 0; /* Reduce footer link spacing */
     }
 }
