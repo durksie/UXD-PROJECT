@@ -38,21 +38,31 @@ document.getElementById('submit').addEventListener("click", function(e) {
    const email = document.getElementById('email').value;
 
    const password = document.getElementById('password').value;
+   // Regular expression to validate email format
+   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+   // Validate the email format
+   if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+} else {
+  //main part
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    alert("Welcome to ClubBraids BY Theodore website!")
+    window.location.href="./Products.html"
+ 
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+    // ..
+  });
+   
+}
   
 
-   signInWithEmailAndPassword(auth, email, password)
- .then((userCredential) => {
-   // Signed up 
-   const user = userCredential.user;
-   alert("Welcome to ClubBraids BY Theodore website!")
-   window.location.href="./Products.html"
-
-   // ...
- })
- .catch((error) => {
-   const errorCode = error.code;
-   const errorMessage = error.message;
-   alert(errorMessage);
-   // ..
- });
 });

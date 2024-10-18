@@ -34,46 +34,70 @@ const db=getDatabase(app);
 
 
  document.getElementById("submit").addEventListener("click", function(e) {
-    e.preventDefault(); // Prevent default form submission behavior
-    //Database
-    
-     // Grab form values
-  const fullname = document.getElementById("fullname").value;
-  const email = document.getElementById("email").value;
-  const cellphone = document.getElementById("cellphone").value;
-  const address = document.getElementById("address").value;
-  const password = document.getElementById("password").value;
+   e.preventDefault(); // Prevent default form submission behavior
+   //Database
 
-  // Save user data to Realtime Database
-  set(ref(db, 'users/' + fullname), {
-    fullname: fullname,
-    email: email,
-    cellphone: cellphone,
-    address: address
-  }).then(() => {
-    // Data saved successfully
-    console.log("User data saved to database.");
-  }).catch((error) => {
-    console.error("Error saving data: ", error);
-  });
-    //authentication
- 
-    const submit =document.getElementById('submit');
-
-    createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    alert("Creating Account")
-    window.location.href="./Login.html"
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage);
-    // ..
-  });
+   // Get the values of the password fields
+   // Grab form values
+   const fullname = document.getElementById("fullname").value;
+   const email = document.getElementById("email").value;
+   const cellphone = document.getElementById("cellphone").value;
+   const address = document.getElementById("address").value;
+   const password = document.getElementById("password").value;
+   const confirmPassword = document.getElementById("confirm").value;
+   // Regular expression to validate email format
+   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
+// Validate the email format
+if (!emailPattern.test(email)) {
+  alert("Please enter a valid email address.");
+} else {
+  
+//The other part
+   // Compare the passwords
+   if (password !== confirmPassword) {
+    alert("Passwords do not match. Please try again.");
+  } else {
+   //submit form
+     // Save user data to Realtime Database
+    set(ref(db, "users/" + fullname), {
+     fullname: fullname,
+     email: email,
+     cellphone: cellphone,
+     address: address,
+   })
+     .then(() => {
+       // Data saved successfully
+       console.log("User data saved to database.");
+     })
+     .catch((error) => {
+       console.error("Error saving data: ", error);
+     });
+   //authentication
+
+   const submit = document.getElementById("submit");
+
+   createUserWithEmailAndPassword(auth, email, password)
+     .then((userCredential) => {
+       // Signed up
+       const user = userCredential.user;
+       alert("Creating Account");
+       window.location.href = "./Login.html";
+       // ...
+     })
+     .catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message;
+       alert(errorMessage);
+       // ..
+     });
+  }
+
+}
+
+
+
+   
+   
  });
