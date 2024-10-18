@@ -44,7 +44,7 @@ document.getElementById('submit').addEventListener("click", function(e) {
  .then((userCredential) => {
    // Signed up 
    const user = userCredential.user;
-   alert("Welcomw!")
+   alert("Welcome to ClubBraids BY Theodore website!")
    window.location.href="./Products.html"
 
    // ...
