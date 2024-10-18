@@ -11,20 +11,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
-    padding: 0;
     background-color: #333;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    flex-wrap: wrap;
 }
 
 .logo img {
     width: 140px;
     height: 100px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .logo img:hover {
@@ -36,6 +35,8 @@ nav ul {
     list-style-type: none;
     display: flex;
     gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
@@ -62,12 +63,13 @@ nav ul li a:hover {
     padding: 10px 15px;
     cursor: pointer;
     margin-left: 10px;
-    border-radius: 5px; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .content {
     display: inline-flex;
-    margin-top: 50px; /* Adjusted for no fixed header */
+    margin-top: 50px;
     padding: 0;
 }
 
@@ -75,7 +77,6 @@ nav ul li a:hover {
     border-radius: 10px;
     max-width: 400px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     transform: translateY(70px);
 }
 
@@ -106,20 +107,20 @@ footer {
     padding: 2rem;
     display: flex;
     justify-content: space-between;
- 
     flex-wrap: wrap;
     margin-top: 50px;
 }
 
+.footer-links{
+    display: inline-flex;
+}
 .footer-logo img {
     width: 200px;
 }
 
 .footer-content {
     display: inline-flex;
-}
-.footer-links{
-    display: inline-flex;
+    flex-wrap: wrap;
 }
 
 .ft {
@@ -135,7 +136,6 @@ footer {
     text-decoration: none;
     color: whitesmoke;
     transition: color 0.3s;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .ft h4 {
@@ -148,13 +148,13 @@ footer {
 }
 
 .social-icons {
-    padding-left: 100px;
     margin-top: 130px;
 }
 
 .social-icons img {
     width: 50px;
     margin: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .social-icons a:hover img {
@@ -180,7 +180,6 @@ footer {
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cont h2 {
@@ -202,6 +201,7 @@ footer {
     width: 300px;
     height: 300px;
     transform: translateY(-20px);
+    border-radius: 10px;
 }
 
 /* Animation */
@@ -225,12 +225,6 @@ footer {
         opacity: 1;
         transform: translateX(0);
     }
-}
-
-.abtCo {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 .cont {
@@ -259,7 +253,6 @@ h2, p, ul {
     header {
         flex-direction: column;
         align-items: center;
-        /* Removed position: fixed; */
     }
 
     .logo img {
@@ -296,11 +289,11 @@ h2, p, ul {
     }
 
     footer {
-        padding: 1rem; /* Reduced footer padding */
+        padding: 1rem;
     }
 
     .social-icons img {
-        width: 40px; /* Reduced size for social icons */
+        width: 40px;
     }
 }
 
@@ -310,11 +303,10 @@ h2, p, ul {
         flex-direction: column;
         align-items: center;
         padding: 10px;
-        /* Removed position: fixed; */
     }
 
     .logo img {
-        width: 100px; /* Resize the logo for smaller phones */
+        width: 100px;
         height: auto;
     }
 
@@ -329,12 +321,12 @@ h2, p, ul {
     }
 
     nav a {
-        font-size: 14px; /* Make nav links slightly smaller */
+        font-size: 14px;
         padding: 5px 10px;
     }
 
     .register-btn, .signin-btn {
-        padding: 8px 12px; /* Reduce button padding */
+        padding: 8px 12px;
         font-size: 14px;
     }
 
@@ -361,8 +353,8 @@ h2, p, ul {
     }
 
     .social-icons img {
-        width: 30px; /* Further reduced size for mobile */
-        margin: 15px; /* Reduced margin between icons */
+        width: 30px;
+        margin: 15px;
     }
 
     .cont1 img {
@@ -370,12 +362,12 @@ h2, p, ul {
     }
 
     footer {
-        padding: 1rem; /* Smaller footer padding for mobile */
-        flex-direction: column; /* Stack footer content */
+        padding: 1rem;
+        flex-direction: column;
         text-align: center;
     }
 
     .ft {
-        margin: 10px 0; /* Reduce footer link spacing */
+        margin: 10px 0;
     }
 }

@@ -3,52 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>/* General Styling */
+    <title>ClubBraids</title>
+    <style>
+        /* General Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+ 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            position: relative; /* Allows absolute positioning of nav */
+        }
+ 
         .logo img {
             width: 140px;
             height: 100px;
         }
-        
+ 
         .logo img:hover {
             transform: scale(1.1);
             opacity: 0.8;
+            transition: transform 0.2s ease, opacity 0.2s ease;
         }
-        
+ 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+ 
         nav ul {
             list-style-type: none;
             display: flex;
             gap: 20px;
             align-items: center;
+            margin: 0;
         }
-        
+ 
         nav a {
             text-decoration: none;
             color: whitesmoke;
             font-weight: bold;
+            transition: color 0.2s ease;
         }
-        
+ 
         nav ul li a:hover {
             color: #fff;
             background-color: black;
             padding: 5px 10px;
             border-radius: 5px;
         }
-        
-        .buttons button:hover {
-            background-color: #000;
-            color: #fff;
-        }
-        
-        .register-btn, .signin-btn {
+ 
+        .buttons button {
             background-color: rgb(250, 215, 218);
             border: 2px solid transparent;
             padding: 10px 15px;
             cursor: pointer;
             margin-left: 10px;
-            border-radius: 5px; 
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
         }
-        
+ 
+        .buttons button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+ 
         /* Burger Menu Styling */
         .burger-menu {
             display: none;
@@ -56,89 +81,93 @@
             cursor: pointer;
             gap: 5px;
         }
-        
+ 
         .burger-menu .line-menu {
             width: 30px;
             height: 4px;
             background-color: whitesmoke;
+            transition: all 0.3s ease;
         }
-        
+ 
         /* Responsive Media Queries */
         @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 0;
-                position: absolute;
-                top: 100px;
-                right: 0;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
-                display: none;
-            }
-        
-            nav ul li {
-                text-align: center;
-                padding: 10px;
-                width: 100%;
-            }
-        
-            .buttons {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 10px 0;
-                display: none;
-            }
-        
             .burger-menu {
-                display: flex;
+                display: flex; /* Show burger menu */
+                margin-left: auto; /* Float to the right */
             }
-        
-            .buttons button {
-                margin-top: 10px;
+ 
+            .nav {
+                display: none; /* Hide nav links by default on mobile */
+                flex-direction: column; /* Stack links vertically */
+                position: absolute; /* Position them absolutely */
+                top: 115px; /* Adjust position below the header */
+                left: 0;
+                right: 0;
+                background-color: #333; /* Match the header background */
+                z-index: 1000; /* Ensure it sits above other content */
+                padding: 15px 0; /* Add padding for better spacing */
+                animation: slideIn 0.3s ease; /* Optional: Animation for appearance */
             }
-            
-            nav ul.active, .buttons.active {
-                display: flex;
+ 
+            .nav.active {
+                display: flex; /* Show nav links when active */
+            }
+ 
+            .nav ul {
+                flex-direction: column; /* Stack links vertically */
+                padding: 0; /* Remove default padding */
+                margin: 0; /* Remove default margin */
+            }
+ 
+            .nav ul li {
+                margin: 10px 0; /* Space between links */
+                text-align: center; /* Center the links */
             }
         }
-        </style>
+ 
+        /* Keyframe for slide-in animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-
-        <div class="burger-menu">
-            <div class="line-menu"></div>
-            <div class="line-menu"></div>
-            <div class="line-menu"></div>
-        </div>
-        
         <div class="logo">
-            <a href="./index.html"><img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo"  href=""/></a> 
+            <a href="./index.html"><img src="Logo.jpeg" alt="ClubBraids Logo"/></a>
         </div>
+ 
         <nav>
-            <ul>
-                <li><a href="./About.html">About Us</a></li>
-                <li><a href="./Services.html">Services</a></li>
-                <li><a href="./Contact.html">Contact Us</a></li>
-            </ul>
+            <div class="burger-menu" onclick="toggleMenu()">
+                <div class="line-menu"></div>
+                <div class="line-menu"></div>
+                <div class="line-menu"></div>
+            </div>
+ 
+            <div class="nav">
+                <ul>
+                    <li><a href="./About.html">About Us</a></li>
+                    <li><a href="./Services.html">Services</a></li>
+                    <li><a href="./Contact.html">Contact Us</a></li>
+                    <li><a href="./Register.html"><button class="register-btn">Register</button></a></li>
+                    <li><a href="./Login.html"><button class="signin-btn">Sign In</button></a></li>
+                </ul>
+            </div>
         </nav>
-        <div class="buttons">
-            <a href="./Register.html"><button class="register-btn" >Register</button></a>
-            <a href="./Login.html"><button class="signin-btn" >Sign In</button></a>
-        </div>
     </header>
-
+ 
     <script>
-        const burgerMenu = document.querySelector('.burger-menu');
-        const navLinks = document.querySelector('nav ul');
-        const buttons = document.querySelector('.buttons');
-    
-        burgerMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            buttons.classList.toggle('active');
-        });
-    
+        function toggleMenu() {
+            const nav = document.querySelector('.nav');
+            nav.classList.toggle('active'); // Toggle the 'active' class
+        }
     </script>
 </body>
 </html>
