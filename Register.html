@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="./register.js" defer></script>
+    <link rel="stylesheet" href="./Assets/style.css">
     <title>ClubBraids Registration</title>
     <style>
         body {
@@ -67,9 +68,33 @@
         button:hover {
             background-color: #0056b3; /* Darker blue on hover */
         }
+
+        .buttons .register-btn{
+           
+           transform: translateX(-30px);
+       }
+
     </style>
 </head>
 <body>
+
+    <!-- Header with logo and navigation -->
+    <header>
+        <div class="logo">
+            <a href="Home.html"><img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo"  href=""/></a> 
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./Services.html">Services</a></li>
+                <li><a href="./Contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <button class="register-btn" href="Register.html">Register</button>
+        </div>
+    </header>
     <div class="register">
         <h2>Register</h2>
         <form id="registerForm">
@@ -94,5 +119,57 @@
         </form>
     </div>
 
+    
+
+    <!-- Footer section -->
+ <footer>
+    <div class="footer-content">
+
+        <div class="footer-logo">
+            <img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo">
+            
+        </div>
+
+
+        <div class="footer-links">
+            <div class="ft">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="Contact.html">Contact Information</a></li>
+                    <li><a href="Contact.html#map">Location</a></li>
+                </ul>
+            </div>
+            <div class="ft">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="About.html">Hairstyles</a></li>
+                    <li><a href="About.html">Appointments</a></li>
+                </ul>
+            </div>
+            <div class="ft">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a href="./Login.html">Login</a></li>
+                    <li><a href="./Register.html">Register for an Account</a></li>
+                    <li><a href="./Login.html">Order History</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/Theodorah Molebogeng" target="_blank">
+            <img src="./Assets/pictures/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://wa.me/27730298765" target="_blank">
+            <img src="./Assets/pictures/whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/Club_Braids_By_Theodore" target="_blank">
+            <img src="./Assets/pictures/instagram.png" alt="Instagram">
+        </a>
+    </div>
+    <p>&copy; Copyright - ClubBraids</p>
+</footer>
 </body>
 </html>
