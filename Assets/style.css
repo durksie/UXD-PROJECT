@@ -75,7 +75,7 @@ nav ul li a:hover {
     border-radius: 10px; /* Rounded corners */
     max-width: 400px;    /* Limit the card width */
     text-align: center;   /* Center-align the content */
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
     transform: translateY(70px);
 }
 
@@ -122,6 +122,10 @@ footer {
     display: inline-flex;
 }
 
+.ft{
+    margin: 30px;
+}
+
 .ft ul {
     list-style-type: none;
     padding-left: 0; /* Fixed padding */
@@ -131,12 +135,12 @@ footer {
     text-decoration: none;    /* Remove underline from links */
     color: whitesmoke;       /* Link color */
     transition: color 0.3s;  /* Smooth transition for hover effect */
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .ft h4 {
     color: pink;
-    padding-left: 40px;
+    
 }
 
 .ft a:hover {
@@ -169,7 +173,7 @@ footer {
     max-width: 800px; /* Limit the width of the content */
     margin: auto; /* Center the content */
     padding: 20px; /* Add padding inside the container */
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cont h2 {
