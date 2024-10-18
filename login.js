@@ -44,7 +44,8 @@ document.getElementById('submit').addEventListener("click", function(e) {
  .then((userCredential) => {
    // Signed up 
    const user = userCredential.user;
-   alert("Welcome manyalo")
+   alert("Welcomw!")
+   window.location.href="./Products.html"
 
    // ...
  })

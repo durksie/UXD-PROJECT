@@ -13,19 +13,16 @@ header {
     align-items: center;
     margin: 0;
     padding: 0;
-    background-color:  #333;
+    background-color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .logo img {
     width: 140px;
     height: 100px;
-  
 }
 
-/*Image Hover*/
+/* Image Hover */
 .logo img:hover {
     transform: scale(1.1); /* Scale the image to 110% */
     opacity: 0.8;          /* Reduce opacity to 80% */
@@ -39,12 +36,12 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color:whitesmoke;
+    color: whitesmoke;
     font-weight: bold;
 }
 
-/*Hover effects*/
-/*Navigation*/
+/* Hover effects */
+/* Navigation */
 nav ul li a:hover {
     color: #fff; /* Change the text color on hover */
     background-color: black; /* Change the background color on hover */
@@ -52,51 +49,42 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/*Buttons style*/
-
+/* Buttons style */
 .buttons button:hover {
     background-color: #000;
     color: #fff;
 }
 
-
-.register-btn ,.signin-btn{
-    background-color:rgb(250, 215, 218);
-    border: 2px;
+.register-btn, .signin-btn {
+    background-color: rgb(250, 215, 218);
+    border: 2px solid transparent; /* Added border for better hover effect */
     padding: 10px 15px;
     cursor: pointer;
     margin-left: 10px;
     border-radius: 5px; 
 }
 
-
-/*Content Style*/
-
-.content{
+/* Content Style */
+.content {
     display: inline-flex;
     margin: 0;
     padding: 0;
-   
 }
 
 .intro {
-    border-radius: 10px;        /* Rounded corners */
-           /* Space inside the card */
-    max-width: 400px;           /* Limit the card width */
-           /* Center the card horizontally */
-    text-align: center;         /* Center-align the content */
-    font-family:cursive;
+    border-radius: 10px; /* Rounded corners */
+    max-width: 400px;    /* Limit the card width */
+    text-align: center;   /* Center-align the content */
+    font-family: cursive;
     transform: translateY(70px);
 }
 
-.intro h2{
+.intro h2 {
     color: purple;
 }
 
-
-
 .content #signup {
-    background-color:rgb(250, 215, 218);
+    background-color: rgb(250, 215, 218);
     color: white;              /* White text */
     padding: 12px 24px;        /* Padding for a comfortable button size */
     font-size: 16px;           /* Font size */
@@ -107,17 +95,16 @@ nav ul li a:hover {
 }
 
 #signup:hover {
-    background-color: black; /* Slightly darker green on hover */
+    background-color: black; /* Slightly darker color on hover */
     transform: scale(1.05);    /* Slightly enlarge the button */
 }
 
-
-/*Footer*/
-.footer-logo img{
-    width:200px;
+/* Footer */
+.footer-logo img {
+    width: 200px;
 }
 
-.footer-content{
+.footer-content {
     display: inline-flex;
 }
 
@@ -131,42 +118,40 @@ footer {
     flex-wrap: wrap;
 }
 
-
-
-.footer-links{
+.footer-links {
     display: inline-flex;
-
- 
 }
 
 .ft ul {
     list-style-type: none;
-    padding-left: -4pxpx;
-}
-.ft a {
-    text-decoration: none;    /* Remove underline from links */
-    color: whitesmoke;          /* Link color */
-    transition: color 0.3s;  /* Smooth transition for hover effect */
-    font-family: cursive;
-  
+    padding-left: 0; /* Fixed padding */
 }
 
-.ft h4{
+.ft a {
+    text-decoration: none;    /* Remove underline from links */
+    color: whitesmoke;       /* Link color */
+    transition: color 0.3s;  /* Smooth transition for hover effect */
+    font-family: cursive;
+}
+
+.ft h4 {
     color: pink;
     padding-left: 40px;
 }
+
 .ft a:hover {
     color: #ffffff;           /* Change text color to white on hover */
     background-color: #007bff; /* Change background color on hover */
 }
- /*social icons style*/
-.social-icons{
+
+/* Social icons style */
+.social-icons {
     padding-left: 100px;
     margin-top: 130px;
 }
 
-.social-icons img{
-    width:50px;
+.social-icons img {
+    width: 50px;
     margin: 30px;
 }
 
@@ -175,24 +160,20 @@ footer {
     filter: brightness(0.8);     
 }
 
-.hero img{
-transform: translateY(65px);
+.hero img {
+    transform: translateY(65px);
 }
 
-
-/*ABOUT PAGE STYLES*/
+/* ABOUT PAGE STYLES */
 .cont {
     max-width: 800px; /* Limit the width of the content */
     margin: auto; /* Center the content */
     padding: 20px; /* Add padding inside the container */
-    
-  
-  font-family: cursive;
-
+    font-family: cursive;
 }
 
-.cont h2{
-color: palevioletred;
+.cont h2 {
+    color: palevioletred;
 }
 
 .cont1 {
@@ -202,19 +183,17 @@ color: palevioletred;
     text-align: justify; /* Justifies the paragraph text */
 }
 
-.cont p{
+.cont p {
     text-align: justify; /* Justifies the paragraph text */   
 }
-.cont1 img{
-    width:300px;
-    height:300px;
+
+.cont1 img {
+    width: 300px;
+    height: 300px;
     transform: translateY(-20px);
-    
 }
 
-
-
-/* Animation*/
+/* Animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -263,4 +242,65 @@ h2, p, ul {
     animation-delay: 0.5s; /* Delay to stagger the text */
 }
 
+/* Media Queries for Responsiveness */
 
+/* For tablets and small desktops */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header items */
+        align-items: center; /* Center items */
+    }
+
+    .logo img {
+        width: 120px; /* Adjust logo size */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+        gap: 10px; /* Reduced gap */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack footer items */
+        align-items: center; /* Center items */
+    }
+
+    .social-icons {
+        padding-left: 0; /* Remove left padding */
+        margin-top: 30px; /* Adjust margin */
+    }
+
+    .cont1 {
+        flex-direction: column; /* Stack about content items */
+    }
+
+    .cont1 img {
+        width: 100%; /* Adjust image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .intro {
+        max-width: 90%; /* Expand intro card width */
+        transform: translateY(50px); /* Adjust vertical position */
+    }
+
+    .buttons button {
+        padding: 8px 12px; /* Adjust button padding */
+    }
+
+    .footer-logo img {
+        width: 150px; /* Adjust footer logo size */
+    }
+
+    .social-icons img {
+        width: 40px; /* Adjust social icon size */
+    }
+
+    .cont1 img {
+        width: 80%; /* Adjust image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
