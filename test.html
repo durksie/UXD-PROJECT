@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>/* General Styling */
+        .logo img {
+            width: 140px;
+            height: 100px;
+        }
+        
+        .logo img:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-weight: bold;
+        }
+        
+        nav ul li a:hover {
+            color: #fff;
+            background-color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .buttons button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+        
+        .register-btn, .signin-btn {
+            background-color: rgb(250, 215, 218);
+            border: 2px solid transparent;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 5px; 
+        }
+        
+        /* Burger Menu Styling */
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .burger-menu .line-menu {
+            width: 30px;
+            height: 4px;
+            background-color: whitesmoke;
+        }
+        
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                position: absolute;
+                top: 100px;
+                right: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                display: none;
+            }
+        
+            nav ul li {
+                text-align: center;
+                padding: 10px;
+                width: 100%;
+            }
+        
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+                display: none;
+            }
+        
+            .burger-menu {
+                display: flex;
+            }
+        
+            .buttons button {
+                margin-top: 10px;
+            }
+            
+            nav ul.active, .buttons.active {
+                display: flex;
+            }
+        }
+        </style>
+</head>
+<body>
+    <header>
+
+        <div class="burger-menu">
+            <div class="line-menu"></div>
+            <div class="line-menu"></div>
+            <div class="line-menu"></div>
+        </div>
+        
+        <div class="logo">
+            <a href="./index.html"><img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo"  href=""/></a> 
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./About.html">About Us</a></li>
+                <li><a href="./Services.html">Services</a></li>
+                <li><a href="./Contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <a href="./Register.html"><button class="register-btn" >Register</button></a>
+            <a href="./Login.html"><button class="signin-btn" >Sign In</button></a>
+        </div>
+    </header>
+
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navLinks = document.querySelector('nav ul');
+        const buttons = document.querySelector('.buttons');
+    
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            buttons.classList.toggle('active');
+        });
+    
+    </script>
+</body>
+</html>

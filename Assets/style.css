@@ -13,7 +13,6 @@ header {
     align-items: center;
     padding: 10px 20px;
     background-color: #333;
-    position: fixed; /* Fix header at the top */
     width: 100%;
     top: 0;
     left: 0;
@@ -67,7 +66,7 @@ nav ul li a:hover {
 
 .content {
     display: inline-flex;
-    margin-top: 150px; /* Adjust to compensate for the fixed header */
+    margin-top: 50px; /* Adjusted for no fixed header */
     padding: 0;
 }
 
@@ -256,7 +255,7 @@ h2, p, ul {
     header {
         flex-direction: column;
         align-items: center;
-        position: fixed; /* Keep header fixed on smaller screens */
+        /* Removed position: fixed; */
     }
 
     .logo img {
@@ -307,6 +306,7 @@ h2, p, ul {
         flex-direction: column;
         align-items: center;
         padding: 10px;
+        /* Removed position: fixed; */
     }
 
     .logo img {
