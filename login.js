@@ -9,7 +9,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/fireba
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword,sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -64,5 +64,38 @@ document.getElementById('submit').addEventListener("click", function(e) {
    
 }
   
+
+});
+
+
+document.getElementById('forgot-password').addEventListener("click", function(e) {
+  e.preventDefault();
+
+
+
+  const email = document.getElementById('email').value;
+
+  if (email) {
+    // Initialize Firebase Authentication
+    const auth = getAuth();
+
+    // Send the password reset email
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Notify the user that the reset email has been sent
+        alert("Password reset email sent! Please check your inbox.");
+      })
+      .catch((error) => {
+        // Handle errors
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(`Error: ${errorMessage}`);
+      });
+  } else {
+    // If no email is entered
+    alert("Email address is required to reset the password.");
+  }
+
+
 
 });
