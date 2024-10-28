@@ -85,11 +85,11 @@ nav ul li a:hover {
 }
 
 .content #signup {
-    background-color: rgb(250, 215, 218);
-    color: white;
+ 
+    color: black;
     padding: 12px 24px;
     font-size: 16px;
-    border: none;
+    border: 3px solid rgb(red, green, blue);
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -97,6 +97,7 @@ nav ul li a:hover {
 
 #signup:hover {
     background-color: black;
+    color: #fff;
     transform: scale(1.05);
 }
 
