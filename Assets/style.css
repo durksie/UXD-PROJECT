@@ -12,64 +12,124 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    padding: 15px 30px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
+    position: relative;
 }
 
 .logo img {
     width: 140px;
     height: 100px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
-.logo img:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
-}
-
-nav ul {
-    list-style-type: none;
+nav ul, .buttons {
     display: flex;
+    align-items: center;
     gap: 20px;
-    padding: 0;
-    margin: 0;
 }
 
 nav a {
-    text-decoration: none;
     color: whitesmoke;
+    text-decoration: none;
     font-weight: bold;
 }
 
-nav ul li a:hover {
-    color: #fff;
-    background-color: black;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.buttons button:hover {
-    background-color: #000;
-    color: #fff;
-}
-
+/* Button styling */
 .register-btn, .signin-btn {
+    color: #333;
     background-color: rgb(250, 215, 218);
     border: 2px solid transparent;
     padding: 10px 15px;
-    cursor: pointer;
-    margin-left: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    cursor: pointer;
 }
+
+.register-btn:hover, .signin-btn:hover {
+    background-color: #f3b8ba;
+    border-color: #333;
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+
+/* Burger Menu */
+#navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px; /* Reduced size for small screens */
+        height: 70px;
+    }
+
+    .menu-icon {
+        display: block; /* Show burger menu icon */
+    }
+
+    #navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        z-index: 1000;
+    }
+
+    #navbar ul, .buttons {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+    }
+
+    /* Button styles remain consistent on mobile */
+    nav a {
+        color: whitesmoke;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    #navbar.open {
+        display: flex;
+    }
+
+    /* Align logo and menu icon side by side with space in between */
+    header {
+        flex-direction: row;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-icon {
+        font-size: 28px;
+        cursor: pointer;
+    }
+}
+
+
 
 .content {
     display: inline-flex;
-    margin-top: 50px;
+    margin-top: 0px;
     padding: 0;
 }
 
@@ -77,15 +137,19 @@ nav ul li a:hover {
     border-radius: 10px;
     max-width: 400px;
     text-align: center;
-    transform: translateY(70px);
+    transform: translateY(230px);
+    margin-left: 40px;
 }
+
+
 
 .intro h2 {
     color: purple;
 }
 
+
 .content #signup {
- 
+      transform: translateY(10px);
     color: black;
     padding: 12px 24px;
     font-size: 16px;
@@ -373,98 +437,89 @@ h2, p, ul {
     }
 }
 
-/*Products Page*/
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+.products {
+    text-align: center; /* Center-align text within the section */
+    padding: 50px 20px; /* Padding around the section */
+    background-color: #f0f0f0; /* Light grey background */
 }
 
-body {
-    background-color: #fafafa;
-    color: #333;
+.products h2 {
+    font-size: 2.5em; /* Size of the section title */
+    margin-bottom: 20px; /* Space below the title */
+    color: #333; /* Darker text color */
 }
 
-.featured-collections {
-    text-align: center;
-    padding: 50px 20px;
-    background: url('background-image.jpg') no-repeat center;
-    background-size: cover;
+.products p {
+    font-size: 1.1em; /* Size of the paragraph text */
+    color: #666; /* Grey text color */
+    margin-bottom: 40px; /* Space below the paragraph */
+    max-width: 600px; /* Maximum width for the paragraph */
+    margin-left: auto; /* Centering with auto margins */
+    margin-right: auto; /* Centering with auto margins */
+    text-align: justify; /* Justify the paragraph text */
 }
 
-.featured-collections h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
+.crd {
+    display: flex; /* Use flexbox for card layout */
+    justify-content: center; /* Center cards in the row */
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Allow wrapping of cards on smaller screens */
 }
 
-.featured-collections p {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 40px;
+.card1, .card2, .card3 {
+    background-color: #fff; /* White background for cards */
+    width: 250px; /* Fixed width for each card */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Clip overflowing content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: transform 0.3s; /* Smooth scaling effect on hover */
 }
 
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.card1:hover, .card2:hover, .card3:hover {
+    transform: scale(1.05); /* Slightly enlarge card on hover */
 }
 
-.card {
-    background-color: #fff;
-    width: 250px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+.card1 img, .card2 img, .card3 img {
+    width: 100%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-}
-
-.card-content {
-    padding: 20px;
-    text-align: center;
+.content-card {
+    padding: 20px; /* Padding inside the card */
+    text-align: center; /* Center text inside the card */
 }
 
 .card-number {
-    font-size: 1.5em;
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1.5em; /* Larger font size for card number */
+    color: #d4a673; /* Unique color for card number */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Space below the number */
 }
 
-.card h3 {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #333;
+.card1 h3, .card2 h3, .card3 h3 {
+    font-size: 1.3em; /* Title font size */
+    margin: 10px 0; /* Space above and below the title */
+    color: #333; /* Title color */
 }
 
-.card p {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 20px;
+.card1 p, .card2 p, .card3 p {
+    font-size: 0.9em; /* Paragraph font size */
+    color: #666; /* Paragraph color */
+    margin-bottom: 20px; /* Space below the paragraph */
 }
 
-.card button {
-    background-color: #d4a673;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.card1 button, .card2 button, .card3 button {
+    background-color: #d4a673; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
-.card button:hover {
-    background-color: #b3895d;
+.card1 button:hover, .card2 button:hover, .card3 button:hover {
+    background-color: #b3895d; /* Button background color on hover */
 }
 

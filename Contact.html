@@ -14,6 +14,7 @@
         })();
     </script>
      <script  src="./contact.js" ></script>
+     <script src="./test.js"></script>
     <title>Contact Us - ClubBraids by Theodore</title>
 <style>
     .container {
@@ -148,24 +149,22 @@ textarea {
 <body>
    <!-- Header with logo and navigation -->
    <header>
-
-      
-
     <div class="logo">
-        <a href="./index.html"><img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo"  href=""/></a> 
+        <a href="./index.html"><img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo" /></a> 
     </div>
-    <nav>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav id="navbar">
         <ul>
             <li><a href="./index.html">Home</a></li>
-            <li><a href="./About.html">About Us</a></li>
-            <li><a href="./Services.html">Services</a></li>
-            <li><a href="./Contact.html">Contact Us</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Services.html">Services</a></li>
+          
         </ul>
+        <div class="buttons">
+            <a href="./Register.html"><button class="register-btn">Register</button></a>
+            <a href="./Login.html"><button class="signin-btn">Sign In</button></a>
+        </div>
     </nav>
-    <div class="buttons">
-        <a href="./Register.html"><button class="register-btn" >Register</button></a>
-        <a href="./Login.html"><button class="signin-btn" >Sign In</button></a>
-    </div>
 </header>
 
 

@@ -31,7 +31,7 @@ const auth=getAuth(app);
 // Grabbing all the input values using const
 
 
-
+ // DO NOT TOUCH BECAUSE IF YOU TOUCH THIS IT WILL FUCK UP THE SYSTEM!!!
 document.getElementById('submit').addEventListener("click", function(e) {
    e.preventDefault(); // Prevent default form submission behavior
 

@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC4m65Py_DzbfxmmtzRCHKDyys_7tjIt-E",
@@ -15,6 +16,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+//get ref to database services
+
+const db=getDatabase(app);
+
+
 
 document.getElementById("out").addEventListener("click", function () {
     // Ask for user confirmation before signing out
@@ -36,3 +43,7 @@ document.getElementById("out").addEventListener("click", function () {
         alert("Sign out canceled.");
     }
 });
+
+
+
+

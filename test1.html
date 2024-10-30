@@ -4,19 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/style.css">
-
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "CUTO2u1l7OG57yOzs",
-      });
-   })();
-</script>
-<script type="module" src="./Product.js" defer></script>
-
     <title>Products Page</title>
     <style>
         /* Basic CSS for the page */
@@ -194,7 +181,7 @@
             <ul>
                 <li><button onclick="goToHome()">Home</button></li>
                 <li><button onclick="goToProfile()">Profile</button></li>
-                <li> <button id="out" type="submit">Sign Out</button></li>
+                <li><button onclick="logout()">Sign Out</button></li>
                 <li style="position: relative;">
                     <button onclick="openCart()">
                         <img src="./Assets/pictures/cart.png" alt="Cart" style="width: 20px; vertical-align: middle;"> Cart
@@ -256,8 +243,6 @@
     </div>
 
     <script>
-
-        
         const conversionRate = 18; // 1 USD to 18 ZAR, adjust this as needed
         let cart = [];
 
@@ -321,57 +306,30 @@
             return `${formattedDate}-${randomNum}`; // Format: YYYYMMDD-RANDOM
         }
 
-(function(){
-    emailjs.init("CUTO2u1l7OG57yOzs"); // Replace with your EmailJS User ID
-})();
+        /*function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                const orderNumber = generateOrderNumber(); // Generate order number
+                alert(`Proceeding to checkout...\nYour order number is: ${orderNumber}`);
+                cart = [];
+                updateCartDisplay();
+                closeCart();
+            }
+        }*/
 
-function proceedToCheckout() {
+        function proceedToCheckout() {
     if (cart.length === 0) {
         alert('Your cart is empty!');
     } else {
-        const email = prompt("Please enter your email to complete the order:");
-        
-        if (email && validateEmail(email)) {
-            const orderNumber = generateOrderNumber();
-            const totalAmount = document.getElementById('total-amount').innerText;
-
-            console.log(`Order Number: ${orderNumber}, Total Amount: ${totalAmount}, User Email: ${email}`);
-            alert(`Proceeding to checkout...\nYour order number is: ${orderNumber}\nTotal Amount: ${totalAmount}\nA confirmation will be sent to: ${email}`);
-            
-            // Send the email
-            sendEmail(email, orderNumber, totalAmount);
-            
-            cart = [];
-            updateCartDisplay();
-            closeCart();
-        } else {
-            alert('Please enter a valid email address.');
-        }
+        const orderNumber = generateOrderNumber(); // Generate order number
+        const totalAmount = document.getElementById('total-amount').innerText; // Get total amount text
+        console.log(`Order Number: ${orderNumber}, Total Amount: ${totalAmount}`); // Log to console
+        alert(`Proceeding to checkout...\nYour order number is: ${orderNumber}`);
+        cart = [];
+        updateCartDisplay();
+        closeCart();
     }
-}
-
-function sendEmail(userEmail, orderNumber, totalAmount) {
-    const templateParams = {
-        order_number: orderNumber,
-        total_amount: totalAmount,
-        user_email: userEmail
-    };
-
-    emailjs.send('service_dtjsg3b', 'template_t2d30k9', templateParams)
-        .then(function(response) {
-            console.log('Email sent successfully!', response.status, response.text);
-        }, function(error) {
-            console.error('Failed to send email:', error);
-        });
-}
-
-
-
-
-// Function to validate email format
-function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
 }
 
 
