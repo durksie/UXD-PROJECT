@@ -89,14 +89,14 @@
             flex-wrap: wrap;
         }
 
-        .card1, .card2, .card3 {
+        .card {
             border: 1px solid #ddd;
             border-radius: 5px;
             overflow: hidden;
             width: 300px;
         }
 
-        .card1 img, .card2 img, .card3 img {
+        .card img {
             width: 100%;
             height: auto;
         }
@@ -182,6 +182,23 @@
                 margin: 10px 0;
             }
         }
+
+        /*HHHHHHHHHHHHHHHHHHHHHHHHH*/
+    /* Modal Background Overlay */
+    .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        /* Modal Styles */
+        
+     /*HHHHHHHHHHHHHHHHHHHHHHHHH*/
     </style>
 </head>
 <body>
@@ -193,7 +210,9 @@
         <nav id="nav-menu">
             <ul>
                 <li><button onclick="goToHome()">Home</button></li>
-                <li><button onclick="goToProfile()">Profile</button></li>
+                <!--mmmmmmmmmmmmm-->
+                <li><button onclick="toggleInfoModal()">More Info</button></li>
+                 <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 <li> <button id="out" type="submit">Sign Out</button></li>
                 <li style="position: relative;">
                     <button onclick="openCart()">
@@ -210,39 +229,156 @@
         <p>Our Solutions are tailor-made for each individual to understand specific needs.</p>
         <div class="crd">
             <!-- Card 1 -->
-            <div class="card1">
-                <img src="./Assets/pictures/style3.jpeg" alt="Shampoos">
+            <div class="card">
+                <img src="./Assets/ProdPics/sty1 10.jpeg" alt="Knotless Braids">
                 <div class="content-card">
-                    <h3>Shampoos</h3>
-                    <p>Phasellus et semper sapien. Sed pulvinar a dolor imperdiet iaculis arcu volutpat.</p>
-                    <input type="number" id="shampoo-quantity" value="1" min="1" style="width: 50px;">
-                    <button onclick="addToCart('Shampoos', 10, document.getElementById('shampoo-quantity').value)">Add to Cart</button>
+                    <h3>Knotless Braids</h3>
+                    <h3>Price: R450.00</h3>
+                    <p>Get stunning Medium Knotless Braidsbeauty, comfort, and style in one!</p>
+                    <input type="number" id="Knotless-quantity" value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('Knotless braids', 25, document.getElementById('Knotless-quantity').value)">Add to Cart</button>
                 </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="card2">
-                <img src="./Assets/pictures/Style2.jpeg" alt="Hair Coloring">
+            <div class="card">
+                <img src="./Assets/ProdPics/sty1 11.jpeg" alt="Hair Coloring">
                 <div class="content-card">
-                    <h3>Hair Coloring</h3>
-                    <p>Ut venenatis urna pretium purus dapibus feugiat vel sit amet quam dapibus leo.</p>
-                    <input type="number" id="hair-coloring-quantity" value="1" min="1" style="width: 50px;">
-                    <button onclick="addToCart('Hair Coloring', 15, document.getElementById('hair-coloring-quantity').value)">Add to Cart</button>
+                    <h3>Short Knotless Braids</h3>
+                    <h3>Price: R350.00</h3>
+                    <p>Get stunning Medium Knotless Braidsbeauty, comfort, and style in one!</p>
+                    <input type="number" id="Short Knotless Braids" value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('Short Knotless Braids', 19.44, document.getElementById('Short Knotless Braids').value)">Add to Cart</button>
                 </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="card3">
-                <img src="./Assets/pictures/Style1.jpeg" alt="Conditioners">
+            <div class="card">
+                <img src="./Assets/ProdPics/sty1 4.jpeg" alt="Conditioners">
                 <div class="content-card">
-                    <h3>Conditioners</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu mattis ante.</p>
-                    <input type="number" id="conditioner-quantity" value="1" min="1" style="width: 50px;">
-                    <button onclick="addToCart('Conditioners', 12, document.getElementById('conditioner-quantity').value)">Add to Cart</button>
+                    <h3>Tribals</h3>
+                    <h3>Price: R300.00</h3>
+                    <p>Transform your look with gorgeous Tribal Braids—beauty and elegance combined!</p>
+                    <input type="number" id="Tribals" value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('Tribals', 16.67, document.getElementById('Tribals').value)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!--card 4-->
+           
+            <div class="card">
+                <img src="./Assets/ProdPics/sty1 5.jpeg" alt="Condition">
+                <div class="content-card">
+                    <h3>Tribals</h3>
+                    <h3>Price: R400.00</h3>
+                    <p>Transform your look with gorgeous Tribal Braids—beauty and elegance combined!</p>
+                    <input type="number" id="Tribals" value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('Tribals', 22.22, document.getElementById('Tribals').value)">Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
+    <!--Second Section-->
+    <section class="products">
+
+        <div class="crd">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="./Assets/ProdPics/sty1 6.jpeg" alt="Shampoos">
+                <div class="content-card">
+                    <h3>Tribals</h3>
+                    <h3>Price:R380.00 </h3>
+                    <p>Transform your look with gorgeous Tribal Braids—beauty and elegance combined!</p>
+                    <input type="number" id="Tribals" value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('Tribals', 21.11, document.getElementById('Tribals').value)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="./Assets/ProdPics/sty1 7.jpeg" alt="Hair Coloring">
+                <div class="content-card">
+                    <h3>Short swept</h3>
+                    <h3>Price:R250.00</h3>
+                    <p>Achieve effortless style with chic Short Swept Braids—perfect for any look!</p>
+                    <input type="number" id="Short swept" value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('Short swept', 13.88, document.getElementById('Short swept').value)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="./Assets/ProdPics/sty1 8.jpeg" alt="Conditioners">
+                <div class="content-card">
+                    <h3>Long side swept</h3>
+                    <h3>Price:R300.00</h3>
+                    <p>Elevate your style with beautiful Long Side Swept Braids—bold and stunning!</p>
+                    <input type="number" id="Long side swept" value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('Long side swept', 16.66, document.getElementById('Long side swept').value)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!--card 4-->
+            <div class="card">
+                <img src="./Assets/ProdPics/sty1 9.jpeg" alt="Condition">
+                <div class="content-card">
+                    <h3>Long Knotless Braids</h3>
+                    <h3>Price:R550.00</h3>
+                    <p>Embrace elegance with Long Knotless Braids—classic, sleek, and stylish!</p>
+                    <input type="number" id="Long Knotless Braids" value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('Long Knotless Braids', 30.55, document.getElementById('Long Knotless Braids').value)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!--Second Section-->
+  <section class="products">
+
+    <div class="crd">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="./Assets/ProdPics/sty1.jpeg" alt="Swept back">
+            <div class="content-card">
+                <h3>Swept back</h3>
+                <h3>Price:R250.00 </h3>
+                <p>Rock a timeless look with Swept Back Braids—simple yet stunning!</p>
+                <input type="number" id="Swept back" value="1" min="1" style="width: 50px;">
+                <button onclick="addToCart('Swept back', 13.88, document.getElementById('Swept back').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="./Assets/ProdPics/sty12.jpeg" alt="Straight back">
+            <div class="content-card">
+                <h3>Straight back</h3>
+                <h3>Price:R200.00</h3>
+                <p>Get a sleek, stylish look with Straight Back Braids—effortlessly cool!</p>
+                <input type="number" id="Straight back" value="1" min="1" style="width: 50px;">
+                <button onclick="addToCart('Straight back', 11.11, document.getElementById('Straight back').value)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="./Assets/ProdPics/sty13.jpeg" alt="Conditioners">
+            <div class="content-card">
+                <h3>Straight up</h3>
+                <h3>Price:R250.00</h3>
+                <p>Go bold with Straight Up Braids—modern, chic, and full of style!</p>
+                <input type="number" id="Straight up" value="1" min="1" style="width: 50px;">
+                <button onclick="addToCart('Straight up', 13.88, document.getElementById('Straight up').value)">Add to Cart</button>
+            </div>
+        </div>
+
+      
+    </div>
+</section>
+
+
+
 
     <!-- Modal for Cart -->
     <div id="cart-modal" class="modal">
@@ -401,13 +537,12 @@ function validateEmail(email) {
             window.location.href = './index.html';
         }
 
-        function goToProfile() {
-            window.location.href = './profile.html';
-        }
-
         function logout() {
             alert('Signing out...');
         }
+
+
+       
     </script>
 </body>
 </html>

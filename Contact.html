@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/style.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init({
-                publicKey: "CUTO2u1l7OG57yOzs",
-            });
-        })();
-    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "CUTO2u1l7OG57yOzs",
+      });
+   })();
+</script>
      <script  src="./contact.js" ></script>
      <script src="./test.js"></script>
     <title>Contact Us - ClubBraids by Theodore</title>
@@ -205,27 +206,47 @@ textarea {
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Your message" required></textarea>
             
-                <button type="submit" id="tbnsend" onclick="sendMail()">Send Message</button>
+                <button type="submit" id="tbnsend" >Send Message</button>
             </form>
             
         </div>
      <!--Java script for the message to be sent to whatsapp-->
         <script>
-            function sendWhatsAppMessage() {
-                // Get form values
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var message = document.getElementById('message').value;
-    
-                // Create the WhatsApp message URL
-                var whatsappURL = 'https://wa.me/27730298765?text=' 
-                    + encodeURIComponent('Hello, my name is ' + name + '.\n')
-                    + encodeURIComponent('My email is ' + email + '.\n')
-                    + encodeURIComponent('Here is my message:\n' + message);
-    
-                // Open WhatsApp with the prefilled message
-                window.open(whatsappURL, '_blank');
-            }
+          // Initialize EmailJS with your user ID
+    emailjs.init("CUTO2u1l7OG57yOzs");
+
+// Function to send the email
+function sendEmail(userEmail, userName, userMessage) {
+    const templateParams = {
+        user_name: userName,
+        user_mail: userEmail,
+        message: userMessage
+    };
+
+    emailjs.send('service_dtjsg3b', 'template_fdl96fg', templateParams)
+        .then(function(response) {
+            console.log('Email sent successfully!', response.status, response.text);
+        }, function(error) {
+            console.error('Failed to send email:', error);
+        });
+}
+
+// Handle form submission
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+
+    // Get form data
+    const userName = document.getElementById('name').value;
+    const userEmail = document.getElementById('email').value;
+    const userMessage = document.getElementById('message').value;
+
+    // Send email
+    sendEmail(userEmail, userName, userMessage);
+
+    // Clear form fields
+    document.getElementById('contactForm').reset();
+    alert("Message sent successfully!");
+});
         </script>
 
         <div id="map">
