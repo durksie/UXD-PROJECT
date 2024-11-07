@@ -163,54 +163,143 @@
 
 
     <!-- Footer section -->
- <footer>
-    <div class="footer-content">
-
-        <div class="footer-logo">
-            <a href=""><img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo"></a>
-            
-        </div>
-
-
-        <div class="footer-links">
-            <div class="ft">
-                <h4>About Us</h4>
-                <ul>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Mission</a></li>
-                    <li><a href="./Contact.html">Contact Information</a></li>
-                    <li><a href="./Contact.html#map">Location</a></li>
-                </ul>
+    <footer>
+        <div class="footer-content">
+    
+            <div class="footer-logo">
+                <img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo">
+                
             </div>
-            <div class="ft">
-                <h4>Products</h4>
-                <ul>
-                    <li><a href="./About.html">Hairstyles</a></li>
-                    <li><a href="./About.html">Appointments</a></li>
-                </ul>
-            </div>
-            <div class="ft">
-                <h4>My Account</h4>
-                <ul>
-                    <li><a href="./Login.html">Login</a></li>
-                    <li><a href="./Register.html">Register for an Account</a></li>
-                    <li><a href="./Login.html">Order History</a></li>
-                </ul>
-            </div>
-        </div>
+    
+    
+            <div class="footer-links">
+                <div class="ft">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#" class="info-link" data-info="Appointments">Appointments</a></li>
+                        <li><a href="#" class="info-link" data-info="History">History</a></li>
+                        <li><a href="#" class="info-link" data-info="Mission">Mission</a></li>
+                        <li><a href="Contact.html">Contact Information</a></li>
+                        <li><a href="Contact.html#map">Location</a></li>
+                    </ul>
+                </div>
+                <div class="ft">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="./Services.html">Hairstyles</a></li>
+                      <!-- Appointments link -->
+    
+    
+    <!-- Popup overlay -->
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Popup box -->
+    <div class="popup" id="popup">
+      <div class="header">
+        <h2 id="popupTitle">Information</h2>
+        <button id="minimizePopup">_</button>
+        <button id="closePopup">&times;</button>
+      </div>
+      <div class="content" id="popupContent">
+        <!-- Content will be inserted here based on the clicked link -->
+      </div>
     </div>
-    <div class="social-icons">
-        <a href="https://www.facebook.com/Theodorah Molebogeng" target="_blank">
-            <img src="./Assets/pictures/facebook.png" alt="Facebook">
-        </a>
-        <a href="https://wa.me/27730298765" target="_blank">
-            <img src="./Assets/pictures/whatsapp.png" alt="WhatsApp">
-        </a>
-        <a href="https://www.instagram.com/Club_Braids_By_Theodore" target="_blank">
-            <img src="./Assets/pictures/instagram.png" alt="Instagram">
-        </a>
-    </div>
-    <p>&copy; Copyright - ClubBraids</p>
-</footer>
+    
+                    </ul>
+                </div>
+                <div class="ft">
+                    <h4>My Account</h4>
+                    <ul>
+                        <li><a href="./Login.html">Login</a></li>
+                        <li><a href="./Register.html">Register for an Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/Theodorah Molebogeng" target="_blank">
+                <img src="./Assets/pictures/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://wa.me/27730298765" target="_blank">
+                <img src="./Assets/pictures/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/Club_Braids_By_Theodore" target="_blank">
+                <img src="./Assets/pictures/instagram.png" alt="Instagram">
+            </a>
+        </div>
+        <p>&copy; Copyright - ClubBraids</p>
+    </footer>
+    
+    <script>
+        const overlay = document.getElementById('overlay');
+        const popup = document.getElementById('popup');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupContent = document.getElementById('popupContent');
+        const closePopupBtn = document.getElementById('closePopup');
+        const minimizePopupBtn = document.getElementById('minimizePopup');
+        const infoLinks = document.querySelectorAll('.info-link');
+        let isMinimized = false;
+      
+        // Define content for each popup
+        const contentData = {
+          "Appointments": `
+            <p>A deposit of R100 is required when booking your appointments.</p>
+            <p>Appointments in advance are possible through the online booking system or via phone.</p>
+            <p>A 24-hour cancellation policy applies to all bookings.</p>
+            <p>ClubBraids uses high-quality, approved hair care products.</p>
+          `,
+          "History": `
+            <p>ClubBraids by Theodore was founded with a passion for intricate braiding techniques.</p>
+            <p>We have been serving the community with exceptional hair care for over 5 years.</p>
+          `,
+          "Mission": `
+            <p>Our mission is to provide top-quality hair braiding services for all ages and styles.</p>
+            <p>We aim to foster confidence and beauty through every braid and twist we create.</p>
+          `
+        };
+      
+        // Function to open the popup with the relevant content
+        infoLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const infoType = link.getAttribute('data-info');
+            popupTitle.textContent = infoType + " Information";
+            popupContent.innerHTML = contentData[infoType] || "Content not available";
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+            isMinimized = false;
+            popupContent.style.display = 'block';
+            popup.classList.remove('minimized');
+            minimizePopupBtn.textContent = '_';
+          });
+        });
+      
+        // Close the popup and overlay
+        closePopupBtn.addEventListener('click', () => {
+          overlay.style.display = 'none';
+          popup.style.display = 'none';
+        });
+      
+        // Minimize the popup
+        minimizePopupBtn.addEventListener('click', () => {
+          if (!isMinimized) {
+            popupContent.style.display = 'none';
+            popup.classList.add('minimized');
+            minimizePopupBtn.textContent = '□';
+            isMinimized = true;
+          } else {
+            popupContent.style.display = 'block';
+            popup.classList.remove('minimized');
+            minimizePopupBtn.textContent = '_';
+            isMinimized = false;
+          }
+        });
+      
+        // Close the popup if clicking outside of it (on the overlay)
+        overlay.addEventListener('click', () => {
+          overlay.style.display = 'none';
+          popup.style.display = 'none';
+        });
+      </script>
 </body>
 </html>

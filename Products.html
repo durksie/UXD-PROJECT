@@ -196,7 +196,51 @@
             z-index: 1000;
         }
 
+
+
+
+
         /* Modal Styles */
+        /* Popup container styling */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      display: none; /* Hidden by default */
+      z-index: 1000;
+    }
+
+    /* Close button styling */
+    .popup .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 18px;
+      color: black;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Background overlay styling */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    
         
      /*HHHHHHHHHHHHHHHHHHHHHHHHH*/
     </style>
@@ -211,8 +255,9 @@
             <ul>
                 <li><button onclick="goToHome()">Home</button></li>
                 <!--mmmmmmmmmmmmm-->
-                <li><button onclick="toggleInfoModal()">More Info</button></li>
-                 <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
+                <li><button id="moreInfoBtn">More Info</button></li>
+                
+                <!--mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
                 <li> <button id="out" type="submit">Sign Out</button></li>
                 <li style="position: relative;">
                     <button onclick="openCart()">
@@ -223,6 +268,37 @@
             </ul>
         </nav>
     </header>
+
+
+
+
+
+
+    <!-- Popup message -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+      <button class="close-btn" id="closePopup">&times;</button>
+      <h2>More Information</h2>
+      <p>To complete booking a slot at ClubBraids by Theodore please note!</p>
+      <p>You are required pay a deposit of R100.00 to the account provided below
+         and bring your order number or proof of payment to the salon. 
+         The remaining balance will be due at the time of service before braiding.</p>
+  
+      <p><strong>Payment Details:</strong></p>
+      <ul>
+        <li>Account Holder Name: Theodore Moleboheng Senokoane</li>
+        <li>Account Number: 1694057648</li>
+        <li>Branch Code: 470010</li>
+        <li>Account Type: Savings account</li>
+        <br><br>
+        <li><B>NB:ON REFERENCE PUT YOUR ORDER NUMBER</B></li>
+      </ul>
+
+  
+      <p>Regards,</p>
+      <p><strong>CLUBBRAIDS BY THEODORE</strong></p>
+    </div>
+
 
     <section class="products">
         <h2>Featured Collections</h2>
@@ -260,7 +336,7 @@
                     <h3>Price: R300.00</h3>
                     <p>Transform your look with gorgeous Tribal Braids—beauty and elegance combined!</p>
                     <input type="number" id="Tribals" value="1" min="1" style="width: 50px;">
-                    <button onclick="addToCart('Tribals', 16.67, document.getElementById('Tribals').value)">Add to Cart</button>
+                    <button onclick="addToCart('Tribals', 16.66, document.getElementById('Tribals').value)">Add to Cart</button>
                 </div>
             </div>
 
@@ -272,8 +348,8 @@
                     <h3>Tribals</h3>
                     <h3>Price: R400.00</h3>
                     <p>Transform your look with gorgeous Tribal Braids—beauty and elegance combined!</p>
-                    <input type="number" id="Tribals" value="1" min="1" style="width: 50px;">
-                    <button onclick="addToCart('Tribals', 22.22, document.getElementById('Tribals').value)">Add to Cart</button>
+                    <input type="number" id="Tribals." value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('Tribals.', 22.22, document.getElementById('Tribals.').value)">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -289,8 +365,8 @@
                     <h3>Tribals</h3>
                     <h3>Price:R380.00 </h3>
                     <p>Transform your look with gorgeous Tribal Braids—beauty and elegance combined!</p>
-                    <input type="number" id="Tribals" value="1" min="1" style="width: 50px;">
-                    <button onclick="addToCart('Tribals', 21.11, document.getElementById('Tribals').value)">Add to Cart</button>
+                    <input type="number" id="-Tribals" value="1" min="1" style="width: 50px;">
+                    <button onclick="addToCart('-Tribals', 21.11, document.getElementById('-Tribals').value)">Add to Cart</button>
                 </div>
             </div>
 
@@ -542,7 +618,104 @@ function validateEmail(email) {
         }
 
 
+
+/*-------------------*/
+ // Get elements
+ const moreInfoBtn = document.getElementById('moreInfoBtn');
+    const popup = document.getElementById('popup');
+    const closePopupBtn = document.getElementById('closePopup');
+    const overlay = document.getElementById('overlay');
+
+    // Show popup and overlay when button is clicked
+    moreInfoBtn.addEventListener('click', () => {
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+    });
+
+    // Hide popup and overlay when close button is clicked
+    closePopupBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+
+    // Hide popup and overlay when overlay is clicked
+    overlay.addEventListener('click', () => {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+
+
+
+
+
+
        
     </script>
+
+
+
+
+
+ <!-- Footer section -->
+ <footer>
+    <div class="footer-content">
+
+        <div class="footer-logo">
+            <img src="./Assets/pictures/Footer.png" alt="ClubBraids Logo">
+            
+        </div>
+
+
+        <div class="footer-links">
+            <div class="ft">
+                <h4>About Us</h4>
+                <ul>
+                    
+                    <li><a href="Contact.html">Contact Information</a></li>
+                    <li><a href="Contact.html#map">Location</a></li>
+                </ul>
+            </div>
+            <div class="ft">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="./Services.html">Hairstyles</a></li>
+                  <!-- Appointments link -->
+
+
+<!-- Popup overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Popup box -->
+<div class="popup" id="popup">
+  <div class="header">
+    <h2 id="popupTitle">Information</h2>
+    <button id="minimizePopup">_</button>
+    <button id="closePopup">&times;</button>
+  </div>
+  <div class="content" id="popupContent">
+    <!-- Content will be inserted here based on the clicked link -->
+  </div>
+</div>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/Theodorah Molebogeng" target="_blank">
+            <img src="./Assets/pictures/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://wa.me/27730298765" target="_blank">
+            <img src="./Assets/pictures/whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/Club_Braids_By_Theodore" target="_blank">
+            <img src="./Assets/pictures/instagram.png" alt="Instagram">
+        </a>
+    </div>
+    <p>&copy; Copyright - ClubBraids</p>
+</footer>
+
+
+
 </body>
 </html>
